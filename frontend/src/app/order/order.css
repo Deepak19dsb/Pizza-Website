@@ -1,0 +1,100 @@
+.container{
+    display: flex;
+    width: 550px;
+    justify-content: center;
+    align-items: center;
+    height:260px;
+    /* background-color: blue; */
+    border:1px solid black;
+    box-shadow: 1 4px 10px grey;
+}
+.main-container{
+    display: flex;
+  justify-content: center;
+  /* background-color: red; */
+}
+.green{
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+   
+    height: 30px;
+    width:30px;
+}
+.red{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    height: 30px;
+    width:30px;
+}
+
+.main{
+         width: max-content;        /* shrink grid to content */
+    margin: 0 auto;            /* center whole grid */
+
+    display: grid;
+    grid-template-columns: repeat(2, 550px);
+    gap: 6px;
+    padding: 6px;
+}
+.left{
+    display: flex;
+    flex:20%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid{
+  display: flex;
+    flex:40%;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right{
+    display: flex;
+    flex:30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add{
+    margin-top:5px ;
+    height: 25px;
+    width: 95px;
+    color:white;
+    background-color: rgb(231, 199, 102);
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+     font-size: 12px;
+}
+.add:hover{
+     background-color: rgb(211, 173, 57);
+     cursor: pointer;
+}
+.delete{
+     margin-top:5px ;
+    height: 25px;
+    width: 95px;
+    color:white;
+    font-size: 11px;
+    background-color: rgb(245, 54, 67);
+    border: none;
+    border-radius: 2px;
+    padding: 5px; 
+}
+.delete:hover{
+ background-color: rgb(228, 36, 49);
+ cursor: pointer;
+    
+}
+.right img{
+    height: 100px;
+    width:100px;
+}
+/* 100+100 */

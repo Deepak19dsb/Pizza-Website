@@ -1,0 +1,22 @@
+<div class="nav">
+  <div class="left">
+    <div class="logo">
+      <h1 routerLink=''>Pizzeria</h1>
+      <img routerLink='' src="/pizza.png" alt="err">
+    </div>
+    <span routerLink="order">Order Pizza</span>
+    <span routerLink="list">Build your Pizza</span>
+  </div>
+  <div class="right">
+    <button routerLink="cart" class="btn">
+      <img src="cart.png" alt="x">
+      Shopping Cart
+      @if(this.data.len()>0){
+      <span class="len">{{this.data.len()}}</span>}
+    </button>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<footer class="footer">
+     <p>Copyrights © 2017 Pizzeria. All rights reserved.</p>
+</footer>

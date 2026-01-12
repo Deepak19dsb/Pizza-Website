@@ -1,0 +1,39 @@
+
+<div class="main-container">
+
+  <div class="main">
+    @for(x of this.data.items(); track x.id){
+    <div class="container" >
+      <div class="left">
+        <p>{{x.name}}</p>
+        @if(x.type==='veg'){
+        <img class="green" src="veg.png" alt="x">
+      }
+        @if(x.type==='nonveg'){
+        <img  class="red"
+        src="non_veg.png" alt="x">
+      }
+        <p>{{x.price}}</p>
+      </div>
+      <div class="mid">
+        <p>{{x.description}}</p>
+        <p>
+          <b>Ingredients:</b> {{x.ingred}}
+        </p>
+        <p>
+<b>Topping:</b> {{x.tops}}
+</p>
+</div>
+<div class="right">
+  <img src={{x.image}} alt="err">
+  @if(x.isSelected){
+  <button class="add" (click)="this.data.toggle(x.id)">Add to cart</button>
+}
+  @if(!x.isSelected){
+  <button class="delete" (click)="this.data.toggle(x.id)">remove from cart</button>
+}
+</div>
+</div>
+}
+  </div>
+</div>

@@ -1,0 +1,155 @@
+
+
+
+
+<!-- <button (click)="refreshPage()">Refresh</button> -->
+ <div class="main-container">
+
+     <div class="container">
+         <div class="left">
+             <div class="heading">
+                 
+                 <span>My Cart</span> 
+                </div>
+                @if(this.pizzaService.len()!==0){
+                  @for(x of this.pizzaService.items();track x.id)  
+                  {  @if(!x.isSelected){
+                    <div  class="items">
+                        <div class="item-cart">
+                            
+                            <img class="pizza-img" src={{x.image}} alt="x">  
+                            @if(x.type==='veg'){
+                                <img class="check" src="veg.png" alt="x">
+                            }
+                            @else{
+                                <img class="check" src="non_veg.png" alt="x">
+                            }
+                            <div class="name">
+                                <b>{{x.name}}</b> 
+                                <span>₹ {{x.price}}</span>
+                            </div>   
+                            <div class="buttons">
+                                
+                                <div class="add">
+        
+                                    <button (click)="this.pizzaService.incr(x.id)">+</button>
+                                </div>
+                                <div class="quantity">
+                                    {{x.quantity}}
+                                </div>
+                                <div class="sub">
+                                    
+                                    <button (click)="this.pizzaService.decr(x.id)">-</button>
+                                    
+                                </div>              
+                            </div>
+                            <div class="tot_price">
+                                <b> ₹ {{ x.quantity*x.price | number:'1.2-2' }}</b>
+                            </div>
+                            <div class="delete">
+                                
+                                <button (click)="this.pizzaService.delete(x.id)" ><img src="trash.PNG" alt="x"></button>
+                            </div>
+                            
+                        </div> 
+                        
+                        
+                    </div>}
+                }
+
+            }
+                @else {
+                    <div class="no-item">
+                        No Pizza added in Cart
+                    </div>
+                    
+                }
+
+                <div class="totalx">
+                    <b>
+                        Subtotal total:    ₹ {{  pizzaService.pizza_cost() | number:'1.2-2' }}
+                    </b>
+                </div>
+            </div>
+            <div class="divide">
+                <div class="right">
+                    
+                    
+                    <div class="heading1"><span>
+                        The total amount of
+                    </span></div>
+                    <div class="pizza_cost">
+                        <span>Pizza</span>
+                        <span>₹ {{ pizzaService.pizza_cost() | number:'1.2-2' }}</span>
+                    </div>
+                    
+                    <div>
+                        @if(this.pizzaService.ingred_cost()===0){
+                            <div class="dropdown">
+                                <span>
+                                    No Ingredients
+                                </span>
+                                <span>
+                                    ₹ 0.00
+                                </span>
+                            </div>
+                        }
+                        @else {
+                            
+                            <div class="dropdown">
+                                
+                                <button class="ingred" (click)="show_ingred()"><div class="txt">Ingredients</div>
+                                    <div>{{!show?'▼':'▲'}}</div> </button>
+                                    <div class="txt2">₹ {{  this.pizzaService.ingred_cost() | number:'1.2-2' }}</div>
+                                </div>
+                                
+                                
+                                
+                                <div class="list" [class.open]="show">
+                                    @for(p of this.pizzaService.ingredients();track p.id){
+                                    <div >
+                                        @if(p.isSelected){
+    <li >
+        <div class="listx">
+
+            <div>
+                {{p.name}}
+                
+            </div>
+            
+            <div>
+                <b>
+                    
+                    ₹ {{p.price}}
+                    
+                </b>
+            </div>
+        </div>
+    </li>}
+</div>}
+</div>
+}
+
+<div class="total">
+    <b>Total:    ₹ {{  pizzaService.total() | number:'1.2-2' }}</b>
+</div>
+
+</div>
+
+</div>
+<div class="submit">
+    
+    <button class="pay" (click)="refreshPage()">
+        Pay
+    </button>
+    
+    <button class="clear" (click)="clear()">
+        Clear
+    </button>
+    
+</div>
+</div>
+
+</div>
+
+</div>

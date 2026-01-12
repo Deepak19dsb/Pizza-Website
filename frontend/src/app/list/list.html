@@ -1,0 +1,28 @@
+<div class="container">
+
+    <p>
+        Pizzeria now gives you option to build your own pizza. Customize your pizza by choosing ingredients from the list given below.
+    </p>
+    <div class="table">
+
+   
+
+        <table >
+            @for(x of this.Data.ingredients(); track x.id){
+            <tr >
+                <td><img src={{x.image}} alt="x"></td>
+                <td><span> {{x.name  }}:</span><span>₹ {{x.price | number:"1.2-2"}}</span></td>
+                <td><input type="checkbox" [checked]="x.isSelected" (change)="this.Data.toggle_ingredients(x.id)"></td>
+            </tr>
+            } 
+
+            
+            
+        </table>
+        
+            
+            <h1>Total Cost: {{this.Data.ingred_cost()}}</h1>
+            <div class="button" ><button routerLink="/cart">Build your Pizza</button></div>
+        
+</div>
+</div>

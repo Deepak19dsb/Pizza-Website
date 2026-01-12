@@ -1,0 +1,123 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 85%;
+    margin: 40px auto;
+}
+
+.p1, .p2, .p3, .p4 {
+    margin-bottom: 50px;
+}
+
+.p1 h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.p1 p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #444;
+}
+.px1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.p2{
+    display: flex;
+    
+}
+.p2x h1{
+    text-align: center;
+    padding:20px;
+}
+.p2x{
+display: flex;
+flex-direction: column;
+flex:70;
+justify-content: center;
+align-items: center;
+}
+.p2x p{
+    padding:50px;
+
+}
+.p2 img{
+width:500px;
+height:300px;
+flex:30;
+}
+
+
+
+/* Ingredients section */
+.p2{
+    display: flex;
+}
+
+.px1{
+    flex:50;
+}
+
+
+
+/* Chef section */
+.p3 {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.img3{
+width: 350px;
+height:300px;
+}
+
+.p3 h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.p3 p {
+    padding:20px;
+    color: #444;
+}
+
+
+.p4 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  justify-content: space-evenly;
+}
+
+
+ .img4 {
+    flex:50;
+width: 500px;
+height:300px;
+
+}
+
+
+
+
+
+.p4 h2 {
+    flex:50;
+   text-align: center;
+    font-size: 28px;
+    color: #222;
+}
+
+
+
